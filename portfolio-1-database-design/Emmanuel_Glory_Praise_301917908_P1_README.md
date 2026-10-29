@@ -21,3 +21,29 @@ Register a customer; register a driver and vehicle; submit a ride request; assig
 
 ## Scope
 The system covers a single-city ride-hailing service using fictional customers, drivers, vehicles and trip records. It includes ride requests, driver assignments, trip status tracking, fare recording and basic trip reporting. Real-time GPS tracking, payment processing, surge pricing, driver ratings, notifications, multiple cities and external map services are excluded.
+
+## Design and implementation files
+
+| File | Contents |
+|---|---|
+| `Emmanuel_Glory_Praise_301917908_P1_Design.md` | Database design, entities, relationships and business rules. |
+| `Emmanuel_Glory_Praise_301917908_P1_ERDiagram.md` | Entity-relationship diagram and relationship explanations. |
+| `Emmanuel_Glory_Praise_301917908_P1_Normalisation.md` | Normalisation through First, Second and Third Normal Forms (1NF, 2NF and 3NF). |
+| `Emmanuel_Glory_Praise_301917908_P1_Schema.sql` | PostgreSQL table definitions, primary keys, foreign keys and integrity constraints. |
+| `Emmanuel_Glory_Praise_301917908_P1_SampleData.sql` | Fictional sample records used to test the database. |
+| `Emmanuel_Glory_Praise_301917908_P1_ConstraintTests.sql` | Deliberately invalid INSERT statements used to test database constraints. |
+| `screenshots/` | Screenshots showing database creation, table structures, sample-data insertion, constraint tests and final row counts. |
+
+## Implementation
+
+The database was implemented using PostgreSQL 16.15 in a terminal environment. The database is named `ride_hailing_portfolio`. It contains five tables: `customer`, `driver`, `vehicle`, `trip` and `trip_status_history`. Primary keys identify records, foreign keys maintain relationships, and `NOT NULL`, `UNIQUE` and `CHECK` constraints enforce the defined data-integrity rules.
+
+The schema was created before inserting the fictional sample data. The constraint tests were executed individually to check whether PostgreSQL rejected records that violated the defined constraints. Screenshots of the implementation and test results were saved in the `screenshots/` folder.
+
+## Test results
+
+The sample-data insertion completed, and the final row-count query returned the expected results: **2 customers, 2 drivers, 2 vehicles, 5 trips and 12 trip-status history records**. The counts remained consistent after the constraint tests.
+
+All executed invalid `INSERT` statements were rejected as expected. The tests covered required fields, duplicate customer emails, invalid foreign-key references, invalid driver availability, invalid trip and history statuses, negative fares, identical pickup and destination locations, and invalid completion details. Screenshots of the tests were saved in the `screenshots/` folder.
+
+Some business rules require additional logic beyond the tested table constraints. These include valid status-transition sequences, preventing a driver from having multiple trips in progress, checking driver availability during assignment, and automatically recording status changes in the history table. These rules were documented but were not verified by the constraint tests described above.
