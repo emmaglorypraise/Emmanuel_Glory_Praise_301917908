@@ -18,7 +18,7 @@ PostgreSQL is used for the structured relational data, including customer, drive
 - [**Portfolio 4 – NoSQL and Advanced Data Models**](portfolio-4-nosql/): MongoDB setup notes, document model, event data, queries and execution screenshots.
 - [**Portfolio 5 – Distributed and Cloud Database Exercise**](portfolio-5-distributed-cloud/): discussion and proposed design for MongoDB replication, availability, sharding and cloud deployment considerations.
 
-Each portfolio folder contains its relevant scripts, documentation and execution evidence. The Portfolio 5 distributed design is a proposal; a replica set, sharding and failover test were not deployed or performed.
+Each portfolio folder contains its relevant scripts, documentation and execution evidence. 
 
 ## Technologies
 
@@ -26,7 +26,3 @@ Each portfolio folder contains its relevant scripts, documentation and execution
 - MongoDB Community Server 8.0.34
 - Mongosh 2.14.1
 - SQL and JavaScript
-
-## Repository evidence
-
-The portfolio folders contain the supporting implementation files, explanations and screenshots. Screenshots document the database state at the time each exercise was performed.
